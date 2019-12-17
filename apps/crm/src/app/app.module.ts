@@ -1,13 +1,39 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Route, RouterModule } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+const routes: Route[] = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'customers'
+  },
+  {
+    path: 'customers',
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'customers'
+  }
+];
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

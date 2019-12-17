@@ -22,8 +22,17 @@
             "tsConfig": "apps/crm/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/crm/src/favicon.ico", "apps/crm/src/assets"],
-            "styles": ["apps/crm/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "apps/crm/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/hammerjs/hammer.min.js",
+              "node_modules/quill/dist/quill.js"
+            ]
           },
           "configurations": {
             "production": {

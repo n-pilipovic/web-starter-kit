@@ -1,9 +1,10 @@
-<div style="text-align:center">
-  <h1>Welcome to crm!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
-<div>Customers: {{ customers$ | async | json }}</div>
+<section style="text-align:center">
+  <header>
+    <h1>Customer Registry Management</h1>
+  </header>
+</section>
+
+<router-outlet></router-outlet>
+
+<!--<div>Message: {{ hello$ | async | json }}</div>-->
+<!--<div>Customers: {{ customers$ | async | json }}</div>-->
