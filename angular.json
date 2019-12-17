@@ -10,7 +10,7 @@
       },
       "root": "apps/crm",
       "sourceRoot": "apps/crm/src",
-      "prefix": "web-starter-kit",
+      "prefix": "crm",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -197,6 +197,31 @@
           "options": {
             "jestConfig": "libs/api-interfaces/jest.config.js",
             "tsConfig": "libs/api-interfaces/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "data": {
+      "root": "libs/data",
+      "sourceRoot": "libs/data/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/data/tsconfig.lib.json",
+              "libs/data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/data/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data/jest.config.js",
+            "tsConfig": "libs/data/tsconfig.spec.json"
           }
         }
       }
