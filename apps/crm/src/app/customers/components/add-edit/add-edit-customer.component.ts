@@ -7,7 +7,6 @@ import { CustomerService } from '../../services/customer.service';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'crm-example-add-customer',
   templateUrl: './add-edit-customer.component.html',
   styleUrls: ['./add-edit-customer.component.scss']
 })
