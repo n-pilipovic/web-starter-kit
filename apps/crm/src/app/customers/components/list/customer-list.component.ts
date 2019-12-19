@@ -6,7 +6,6 @@ import { CustomerService } from '../../services/customer.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'crm-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.scss']
 })
@@ -44,6 +43,8 @@ export class CustomerListComponent implements OnInit {
     const routePaths = ['customers'];
     if (customerId) {
       routePaths.push(customerId.toString());
+    } else {
+      routePaths.push('add');
     }
     this.router.navigate(routePaths);
   }

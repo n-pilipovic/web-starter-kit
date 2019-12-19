@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Customer } from '@web-starter-kit/api-interfaces';
+import { Country, Customer } from '@web-starter-kit/api-interfaces';
 import { environment } from 'apps/crm/src/environments/environment';
 import { Observable } from 'rxjs';
 
@@ -16,8 +16,8 @@ export class CustomerService {
   // private readonly baseUrl = 'http://localhost:3333/api/customers';
   private readonly baseUrl = `${environment.apiUrl}/customers`;
 
-  getAllCountries(): Observable<any[]> {
-    return this.httpClient.get<any>('https://restcountries.eu/rest/v2/all');
+  getAllCountries(): Observable<Array<Country>> {
+    return this.httpClient.get<Array<Country>>('https://restcountries.eu/rest/v2/all');
   }
 
   searchCustomers(query: any = {}): Observable<Array<Customer>> {

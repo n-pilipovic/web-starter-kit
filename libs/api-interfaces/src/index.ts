@@ -4,3 +4,8 @@ export * from './classifiers/customer-type.enum';
 export * from './classifiers/identity-type.enum';
 export * from './lib/customer.interface';
 export * from './lib/user.interface';
+export * from './lib/currency.interface';
+export * from './lib/country.interface';
+export * from './lib/language.interface';
+export * from './lib/regional-bloc.interface';
+export * from './lib/translations.interface';
